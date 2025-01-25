@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eb1b0e6f3fa493c909b9bff02594380, type: 3}
+  m_Name: CardSpriteMap
+  m_EditorClassIdentifier: 
+  cardSprites:
+  - color: 0
+    sprite: {fileID: 21300000, guid: 9d42c99e7f3024c389ab72acdf431e22, type: 3}
+  - color: 1
+    sprite: {fileID: 21300000, guid: 8ee0c9247275b40f78c62ae500cc1559, type: 3}
+  - color: 2
+    sprite: {fileID: 21300000, guid: 660f70af7a74a4d549a19578a3bdbc09, type: 3}
+  - color: 3
+    sprite: {fileID: 21300000, guid: 3934a2da6413e4c479926b22e62ec653, type: 3}
+  - color: 4
+    sprite: {fileID: 21300000, guid: ce4dbffe7f6af4d7db52bd4d1bbe21ee, type: 3}
