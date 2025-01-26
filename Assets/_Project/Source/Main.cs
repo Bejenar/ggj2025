@@ -26,6 +26,8 @@ namespace _Project.Source
             G.scoreManager = new ScoreManager();
             G.levelManager = new LevelManager();
 
+            G.audio.MusicVolume = 0.2f;
+
             // if no safe
             G.main.InitRunState();
         }

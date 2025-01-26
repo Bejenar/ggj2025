@@ -73,6 +73,7 @@ namespace _Project.Source
 
         private async void Start()
         {
+            G.audio.Play<GameplayMusic>();
             G.fader.FadeOut();
             G.battleScene = this;
 

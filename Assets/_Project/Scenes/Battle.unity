@@ -17549,7 +17549,7 @@ MonoBehaviour:
   heightSpacing: 1
   maxColumns: 1
   maxRows: 1
-  canDrag: 1
+  canDrag: 0
 --- !u!1001 &919828344
 PrefabInstance:
   m_ObjectHideFlags: 0

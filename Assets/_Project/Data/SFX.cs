@@ -114,4 +114,41 @@ namespace _Project.Data
             Define<SFXArray>().volume = 0.5f;
         }
     }
+    
+    
+    public class LightSwitchSFX : CMSEntity
+    {
+        public LightSwitchSFX()
+        {
+            Define<SFXTag>().VaryPitch = true;
+            Define<SFXArray>().files.Add(Resources.Load<AudioClip>("SFX/light_switch"));
+            Define<SFXArray>().volume = 0.5f;
+        }
+    }
+    
+    public class TypeSFX : CMSEntity
+    {
+        public TypeSFX()
+        {
+            Define<SFXTag>().VaryPitch = true;
+            Define<SFXArray>().files.Add(Resources.Load<AudioClip>("SFX/key_type"));
+            Define<SFXArray>().volume = 0.5f;
+        }
+    }
+    
+    public class GameplayMusic : CMSEntity
+    {
+        public GameplayMusic()
+        {
+            Define<MusicTag>().clip = Resources.Load<AudioClip>("Music/Gameplay");
+        }
+    }
+    
+    public class CutsceneMusic : CMSEntity
+    {
+        public CutsceneMusic()
+        {
+            Define<MusicTag>().clip = Resources.Load<AudioClip>("Music/Cutscene");
+        }
+    }
 }
