@@ -95,7 +95,7 @@ namespace _Project.Data
     {
         public EnemySink1000()
         {
-            Define<TagScoreTask>().score = 500;
+            Define<TagScoreTask>().score = 550;
         }
     }
     
@@ -103,7 +103,7 @@ namespace _Project.Data
     {
         public EnemySink9999()
         {
-            Define<TagScoreTask>().score = 1000;
+            Define<TagScoreTask>().score = 2000;
         }
     }
     
