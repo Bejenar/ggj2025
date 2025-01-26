@@ -116,7 +116,7 @@ namespace _Project.Source.Artifacts
             shopItems.Add(14, new AddCardsToDeckShopItem(3, 1, 3, CardColor.GREEN, "Touch Grass".Color(CardColor.GREEN.ToColor())));
             shopItems.Add(15, new AddCardsToDeckShopItem(2, 1, 5, CardColor.NO_COLOR, "Garbage Collector".Color(CardColor.NO_COLOR.ToColor())));
             shopItems.Add(16, new ArtifactShopItem(bulkUp, 10, 1));
-            shopItems.Add(16, new ArtifactShopItem(blue, 5, 1));
+            shopItems.Add(17, new ArtifactShopItem(blue, 5, 1));
 
             InitBag();
         }
