@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using _Project.Source.Artifacts;
+using Engine.Math;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -52,14 +53,17 @@ namespace _Project.Source.Util
             
             if (Input.GetKeyDown(KeyCode.A))
             {
-                var depression = new ColorScoreModifier(100, CardColor.NO_COLOR, "Depression");
+                var depression = new ColorScoreModifier(3, CardColor.NO_COLOR, "<color=#ded4d3>Depression</color>");
+                var bulkUp = new AdditionalScore(2, "<color=#00B6F7>Bubblemancer</color>");
+                var burningPassion = new ColorScoreModifier(10, CardColor.RED, "Burning Passion".Color("#EA4345"));
+                var goldOnMonochrome = new AddGoldOnCombo(5, new MonochromeCombo(), "Greed".Color("#ded4d3"));
+                var multPerDiscard = new MultPerDiscard(0.5f, "Tactician".Color("#EA4345"));
                 
                 G.state.artifacts.Add(depression);
-                G.state.artifacts.Add(depression);
-                G.state.artifacts.Add(depression);
-                G.state.artifacts.Add(depression);
-                G.state.artifacts.Add(depression);
-                G.state.artifacts.Add(depression);
+                G.state.artifacts.Add(bulkUp);
+                G.state.artifacts.Add(burningPassion);
+                G.state.artifacts.Add(goldOnMonochrome);
+                G.state.artifacts.Add(multPerDiscard);
             }
             
             if (Input.GetKeyDown(KeyCode.P))

@@ -12,6 +12,12 @@ namespace _Project.Source
         {
             E.Id<Level1>(),
             E.Id<Level2>(),
+            E.Id<Level3>(),
+            E.Id<Level4>(),
+            E.Id<Level5>(),
+            E.Id<Level6>(),
+            E.Id<Level7>(),
+            E.Id<Level8>(),
             E.Id<LevelLast>(),
         };
 

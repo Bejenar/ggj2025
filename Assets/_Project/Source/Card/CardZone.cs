@@ -18,7 +18,7 @@ namespace _Project.Source.Util
         public bool canDrag;
         List<InteractiveCard> alignedSet = new List<InteractiveCard>();
         
-        private float AdjustedSpacing => spacing/1920f * Screen.width;
+        private float AdjustedSpacing => spacing;
         private float AdjustedHeightSpacing => heightSpacing/1920f * Screen.width;
         private Rect AdjustedCapture;
         async void Start()
@@ -162,8 +162,8 @@ namespace _Project.Source.Util
             if (capture.size != Vector2.zero)
             {
                 Gizmos.color = new Color(0.5f, 0, 0, 0.25f);
-                Gizmos.DrawCube(transform.position, capture.size);
-                Gizmos.DrawWireCube(transform.position, capture.size);
+                Gizmos.DrawCube(transform.position, AdjustedCapture.size);
+                Gizmos.DrawWireCube(transform.position, AdjustedCapture.size);
             }
             else
             {

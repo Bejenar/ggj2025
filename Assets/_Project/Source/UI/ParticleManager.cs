@@ -18,6 +18,8 @@ namespace _Project.Source.Village.UI
         public Transform initPosition;
         public Transform attackPosition;
 
+        public bool simulate = false;
+        
         private void Start()
         {
             G.particles = this;
@@ -60,9 +62,11 @@ namespace _Project.Source.Village.UI
             G.audio.Play<BubbleGunSFX>();
             Debug.Log("PlayBubbles");
             var main = bubbles.main;
-            var gradient = new ParticleSystem.MinMaxGradient(
-                GetGradient(G.battleScene.selected
-                    .Select(x => x.card.color).ToList()))
+            
+            var grad = simulate ? GetGradient(colors.ToList()) : GetGradient(G.battleScene.selected
+                .Select(x => x.card.color).ToList());
+            
+            var gradient = new ParticleSystem.MinMaxGradient(grad)
             {
                 mode = ParticleSystemGradientMode.RandomColor
             };

@@ -94,11 +94,13 @@ namespace _Project.Source.Challenges
         
         public bool Evaluate()
         {
-            bool result = scoreTask.Evaluate() && patternTask.Evaluate();
+            bool scoreResult = scoreTask.Evaluate();
+            bool patternResult = patternTask.Evaluate();
+            bool result = scoreResult && patternResult;
 
-            if (!result)
+            if (!patternResult)
             {
-                scoreTask.score = 0;
+                scoreTask.score -= G.battleScene.Score;
             }
 
             return result;

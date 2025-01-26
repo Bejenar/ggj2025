@@ -47,7 +47,9 @@ namespace _Project.Source.Util
 
             if (IsPlayed)
             {
-                image.color = image.color.WithAlpha(0.5f);
+                var color = image.color;
+                color.a = 0.5f;
+                image.color = color;
             }
         }
 
@@ -111,7 +113,6 @@ namespace _Project.Source.Util
         public void OnPointerEnter(PointerEventData eventData)
         {
             idleAnimation.Kill();
-            Debug.Log("Pointer Enter" + gameObject.name);
             if (G.dragCard != null) return;
             
             G.main.ShowCardTooltip(this);

@@ -35,7 +35,7 @@ namespace _Project.Source.Util
         {
             return color switch
             {
-                CardColor.NO_COLOR => "Colorless".Color("#E284F7"),
+                CardColor.NO_COLOR => "Colorless".Color("#ded4d3"),
                 CardColor.RED => "Red".Color("#EA4345"),
                 CardColor.BLUE => "Blue".Color("#00B6F7"),
                 CardColor.YELLOW => "Yellow".Color("#EF9200"),

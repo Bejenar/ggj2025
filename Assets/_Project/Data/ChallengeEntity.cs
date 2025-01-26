@@ -5,10 +5,6 @@ using Cysharp.Threading.Tasks;
 
 namespace _Project.Data
 {
-    public class LevelEntity : CMSEntity
-    {
-    }
-    
     public class ChallengeEntity : CMSEntity
     {
     }
@@ -41,39 +37,6 @@ namespace _Project.Data
     public class TagReward : EntityComponentDefinition
     {
         public int gold;
-    }
-    
-    public class Level1 : LevelEntity {
-        public Level1()
-        {
-            Define<TagListChallenges>().all.Add(E.Id<Enemy1>());
-            Define<TagReward>().gold = 5;
-        }
-    }
-    
-    public class Level2 : LevelEntity {
-        public Level2()
-        {
-            Define<TagListChallenges>().all.Add(E.Id<Enemy2>());
-            Define<TagReward>().gold = 10;
-        }
-    }
-    
-    public class Level3 : LevelEntity {
-        public Level3()
-        {
-            Define<TagListChallenges>().all.Add(E.Id<Enemy2>());
-            Define<TagListChallenges>().all.Add(E.Id<Enemy3>());
-            Define<TagReward>().gold = 10;
-        }
-    }
-    
-    public class LevelLast : LevelEntity {
-        public LevelLast()
-        {
-            Define<TagListChallenges>().all.Add(E.Id<LastEnemy>());
-            Define<TagReward>().gold = 999;
-        }
     }
 
     public class LastEnemy : ChallengeEntity
@@ -109,6 +72,58 @@ namespace _Project.Data
             Define<TagScoreTask>().score = 20;
             Define<TagPatternTask>().color = CardColor.NO_COLOR;
             Define<TagPatternTask>().count = 3;
+        }
+    }
+    
+    public class EnemySink125 : ChallengeEntity
+    {
+        public EnemySink125()
+        {
+            Define<TagScoreTask>().score = 125;
+        }
+    }
+    
+    public class EnemySink250 : ChallengeEntity
+    {
+        public EnemySink250()
+        {
+            Define<TagScoreTask>().score = 250;
+        }
+    }
+    
+    public class EnemySink1000 : ChallengeEntity
+    {
+        public EnemySink1000()
+        {
+            Define<TagScoreTask>().score = 500;
+        }
+    }
+    
+    public class EnemySink9999 : ChallengeEntity
+    {
+        public EnemySink9999()
+        {
+            Define<TagScoreTask>().score = 1000;
+        }
+    }
+    
+    public class EnemyBlue3 : ChallengeEntity
+    {
+        public EnemyBlue3()
+        {
+            Define<TagScoreTask>().score = 50;
+            Define<TagPatternTask>().color = CardColor.BLUE;
+            Define<TagPatternTask>().count = 3;
+        }
+    }
+    
+    public class Monochrome : ChallengeEntity
+    {
+        public Monochrome()
+        {
+            Define<TagScoreTask>().score = 100;
+            Define<TagPatternTask>().color = CardColor.NO_COLOR;
+            Define<TagPatternTask>().count = 2;
         }
     }
 }

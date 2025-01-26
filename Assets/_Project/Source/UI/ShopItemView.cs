@@ -23,7 +23,9 @@ namespace _Project.Source.Village.UI
         
         private IShopItem _item;
         
-        private List<Material> _materials; 
+        private List<Material> _materials;
+
+        public int id;
         
         private void Start()
         {
@@ -35,9 +37,10 @@ namespace _Project.Source.Village.UI
             }));
         }
 
-        public void Init(IShopItem item)
+        public void Init(IShopItem item, int id)
         {
             _item = item;
+            this.id = id;
             UpdateView();
         }
         public void UpdateView()
@@ -58,6 +61,7 @@ namespace _Project.Source.Village.UI
                 G.battleScene.UpdateGoldView();
                 await _item.Purchase();
                 purchased = true;
+                G.shopManager.ClearBag(id);
                 
                 G.shopManager.RemoveShopItem(this);
                 G.shopManager.UpdateShopViews();

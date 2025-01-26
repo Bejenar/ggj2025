@@ -39,7 +39,7 @@ namespace _Project.Source
         {
             var state = new RunState();
             state.deck = G.deckGenerator.GenerateDeck();
-            state.gold = 0;
+            state.gold = 3;
             state.maxHandSize = 8;
             state.maxPlays = 4;
             state.maxDiscards = 3;

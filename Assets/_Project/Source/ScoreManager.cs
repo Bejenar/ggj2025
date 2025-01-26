@@ -50,7 +50,7 @@ namespace _Project.Source
                 }
             }
 
-            foreach (var interactor in G.interactor.FindAll<IOnComboEvaluated>())
+            foreach (var interactor in G.interactor.FindAll<IOnComboEvaluatedInteractor>())
             {
                 await interactor.OnComboEvaluated(evaluatedCombo);
             }
@@ -63,12 +63,12 @@ namespace _Project.Source
         UniTask OnCardScored(Card card, float score);
     }
 
-    public interface IOnComboEvaluated
+    public interface IOnComboEvaluatedInteractor
     {
         UniTask OnComboEvaluated(ICombo combo);
     }
     
-    public class ScoreManagerView : BaseInteraction, IOnComboEvaluated
+    public class ScoreManagerView : BaseInteraction, IOnComboEvaluatedInteractor
     {
         public UniTask OnComboEvaluated(ICombo combo)
         {

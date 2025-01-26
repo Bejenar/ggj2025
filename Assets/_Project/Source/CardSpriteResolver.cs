@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using _Project.Source.Util;
 using UnityEngine;
@@ -11,6 +12,11 @@ namespace _Project.Source
         private CardSpriteEntry[] cardSprites;
         private readonly Dictionary<CardColor, Sprite> _spriteMap = new();
 
+
+        private void OnEnable()
+        {
+            OnValidate();
+        }
 
         public Sprite GetSprite(CardColor color)
         {

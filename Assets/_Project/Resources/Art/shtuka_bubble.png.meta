@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      shtuka_bubble_0: -841149122992042078
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -60,10 +60,10 @@ namespace _Project.Source
         // Battle state
         public Deck _deck;
         private int hands;
-        private int discards;
+        public int discards;
         private int gold => G.state.gold;
-        private float score;
-        private ICombo _currentCombo;
+        public float score;
+        public ICombo _currentCombo;
         private List<ChallengeView> _challenges;
 
         //State properties
@@ -277,6 +277,11 @@ namespace _Project.Source
             ShowText(scoreTextSpawnPosition.position, $"Combo  x{_currentCombo.Multiplier:F1}");
             score *= _currentCombo.Multiplier;
             UpdateScoreView(true);
+            
+            foreach (var modifier in G.state.artifacts.OfType<IAfterOnComboEvaluated>())
+            {
+                await modifier.OnComboEvaluated();
+            }
 
             await G.particles.AttackAnimation();
 
@@ -322,12 +327,12 @@ namespace _Project.Source
 
         private async UniTask Victory()
         {
-            G.state.level++;
             G.audio.Play<WinSFX>();
             await victoryPopup.DOScale(1, 0.5f).SetEase(Ease.OutBack);
             AddReward();
             await UniTask.WaitForSeconds(1.5f);
             await victoryPopup.DOScale(0, 0.5f).SetEase(Ease.InBack);
+            G.state.level++;
             EnterShop();
         }
 
@@ -335,7 +340,8 @@ namespace _Project.Source
         {
             var reward = G.levelManager.GetLevelReward();
             var remainingHands = hands;
-            G.state.gold += reward + remainingHands;
+            var interest = G.state.gold / 5;
+            G.state.gold += reward + remainingHands + interest;
             UpdateGoldView();
         }
 

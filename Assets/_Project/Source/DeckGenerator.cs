@@ -25,7 +25,7 @@ namespace _Project.Source
             return new Deck(list);
         }
 
-        public int GetCardCount(CardColor color)
+        public static int GetCardCount(CardColor color)
         {
             switch (color)
             {
@@ -42,7 +42,12 @@ namespace _Project.Source
             }
         }
 
-        public int GetCardValue(CardColor color)
+        public static Card GetCard(int id, CardColor color)
+        {
+            return new Card(id, color, GetCardValue(color));
+        }
+        
+        public static int GetCardValue(CardColor color)
         {
             switch (color)
             {
