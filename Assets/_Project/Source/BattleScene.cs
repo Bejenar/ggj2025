@@ -474,6 +474,8 @@ namespace _Project.Source
 
         public async void NextLevel()
         {
+            G.battleScene.nextLevelButton.gameObject.SetActive(false);
+            
             await UniTask.WaitForSeconds(0.2f);
             await G.shopManager.CloseShop();
 
